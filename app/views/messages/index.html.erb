@@ -1,0 +1,26 @@
+<h1>Message Board</h1>
+<hr>
+<div class="row">
+<div class="col-md-12">
+  <table class="table table-striped">
+    <tbody>
+    <tr>
+      <th>id</th>
+      <th>タイトル</th>
+      <th>メッセージ</th>
+      <th></th>
+    </tr>
+
+    <% @message.each do |message|  %>
+    <tr>
+      <td><%= message.id %></td>
+      <td><%= message.title %></td>
+      <td><%= message.content %></td>
+      <th>[<%= link_to 'Edit', edit_messages_path(message) %>] [Delete]</th>
+    </tr>
+      <% end %>
+  </tbody>
+  </table>
+  <%= link_to 'New Message', new_messages_path %>
+</div>
+</div>
